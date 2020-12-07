@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apenrose <apenrose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aklinaev <aklinaev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 23:47:54 by apenrose          #+#    #+#             */
-/*   Updated: 2020/12/07 22:38:12 by apenrose         ###   ########.fr       */
+/*   Updated: 2020/12/08 02:06:29 by aklinaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,40 +23,14 @@ int main(void)
   char *str;
   int i = 0;
 
-  fd = open("our_text.text", O_RDONLY);
+  fd = open("alphabet.txt", O_RDONLY);
   
-  while (i < 4)
+  while (i < 85)
      {
              n = get_next_line(fd, &str);
              i++;
-             printf("ITOG === %s\n", str);
+             //printf("gnl = %d\n", n);
+             printf("%s\n", str);
      } 
-      //n = get_next_line(fd, &str);
-    
-    //printf("ITOG === %s\n", str);
-  
-  /*
-  while (n > 0)
-  {
-    n = get_next_line(fd, &str);
-    printf("%s\n", str);
-    free(str);
-  }
-  */
- return (0);
-}
-
-/*
-int main(void)
-{   
-    int fd = open("our_text.txt", O_RDONLY);
-    char *stroka;
-    int i = 1; 
-    printf("88");
-    while (get_next_line(fd, &stroka) >= 0)
-    {
-        printf("#%d ===> %s\n", i, stroka);
-    }
     return (0);
 }
-*/

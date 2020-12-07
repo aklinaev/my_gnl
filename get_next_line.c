@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apenrose <apenrose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aklinaev <aklinaev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 19:36:57 by apenrose          #+#    #+#             */
-/*   Updated: 2020/12/06 19:02:17 by apenrose         ###   ########.fr       */
+/*   Updated: 2020/12/07 16:40:58 by aklinaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,27 +115,58 @@ char		*ft_strjoin(char const *s1, char const *s2)
 
 int		get_next_line(int fd, char **str)
 {
-	char	buffer[BUFFER_SIZE];
+	char	buffer[BUFFER_SIZE + 1];
 	int		x;
 	int		new_line;
 	int		i;
 	static char *ostatok;
+	static int y;
 
+	y = 0;
 	i = 0;
 	x = 0;
 	new_line = 0;
 	*str = ft_strdup("");
-	ostatok = ft_strdup("");
+	
+	if (y == 0)
+	{
+		ostatok = ft_strdup("");
+		y++;
+	}
+	
+	/*
+	if (ostatok[0] == '\0')
+	{
+		// если  в остатке что-то есть, то копируем в буфер, 
+		printf("ostatokNULL = %s\n", ostatok);
+	}
+	*/
 	x = read(fd, buffer, BUFFER_SIZE);
+	buffer[x] = '\0';
 	printf("buffer = %s\n", buffer);
+	ostatok = ft_strchr(buffer, '\n');
+	
+	while (ostatok == NULL)
+	{
+		*str = ft_strjoin(*str, buffer);
+		x = read(fd, buffer, BUFFER_SIZE);
+		buffer[x] = '\0';
+		printf("buffer = %s\n", buffer);
+		ostatok = ft_strchr(buffer, '\n');
+	}
+	printf("ostatok = %s\n", ostatok);
+	*str = ft_strjoin(*str, buffer);
+	
+	/*
+	printf("buffer = %s\n", buffer);
+	
 	buffer[x] = '\0';	
 	printf("b[x] = %c\n", buffer[x]);
 	
 	ostatok = ft_strchr(buffer, '\n');
 	printf("ostatok = %s\n", ostatok);
 	*str = ft_strjoin(*str, buffer);
-
-
+	*/
 	return (0);
 }
 

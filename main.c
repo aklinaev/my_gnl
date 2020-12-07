@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apenrose <apenrose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aklinaev <aklinaev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 23:47:54 by apenrose          #+#    #+#             */
-/*   Updated: 2020/12/05 21:11:54 by apenrose         ###   ########.fr       */
+/*   Updated: 2020/12/07 16:38:21 by aklinaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,20 @@ int main(void)
   n = 1;
   int fd;
   char *str;
+  int i;
+
   fd = open("our_text.text", O_RDONLY);
   
-    n = get_next_line(fd, &str);
-    printf("ITOG === %s\n", str);
+  while (i < 2)
+     {
+             n = get_next_line(fd, &str);
+             i++;
+             printf("ITOG === %s\n", str);
+     } 
+      //n = get_next_line(fd, &str);
+    
+    //printf("ITOG === %s\n", str);
+  
   /*
   while (n > 0)
   {

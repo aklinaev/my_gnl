@@ -3,196 +3,89 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aklinaev <aklinaev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: apenrose <apenrose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 19:36:57 by apenrose          #+#    #+#             */
-/*   Updated: 2020/12/07 16:40:58 by aklinaev         ###   ########.fr       */
+/*   Updated: 2020/12/07 23:55:01 by apenrose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include <stdio.h>
 
-
-char		*ft_strchr(const char *s, int c)
+char	*copy_ostatok(char *ostatok)
 {
-	while (*s && *s != (char)c)
-	{
-		//printf(" strchr = %s . ", s);
-		s++;
-	}
-	if (*s == (char)c)
-		return ((char *)s);
-	return (NULL);
-}
-
-
-char		*ft_strdup(const char *s1)
-{
-	char	*s2;
-	size_t	i;
-	size_t	count_s1;
-
-	s2 = NULL;
-	i = 0;
-	count_s1 = 0;
-	while (s1[count_s1])
-	{
-		count_s1++;
-	}
-	if (!(s2 = (char*)malloc(sizeof(char) * (count_s1 + 1))))
-		return (NULL);
-	while (i < count_s1)
-	{
-		s2[i] = s1[i];
-		i++;
-	}
-	s2[i] = '\0';
-	return (s2);
-}
-
-size_t			ft_strlenn(const char *s)
-{
-	size_t	len;
-
-	len = 0;
-	while (s[len] != '\n')
-		len++;
-	return (len);
-}
-
-size_t			ft_strlen(const char *s)
-{
-	size_t	len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	return (len);
-}
-
-char		*part_two(char const *s1, char const *s2, char *uni)
-{
-	int		g;
 	int		i;
+	char	*buffer;
 
-	i = 0;
-	g = 0;
-	while (s1[i])
-	{
-		uni[g] = s1[i];
-		i++;
-		g++;
-	}
-	i = 0;
-	while (s2[i] != '\n' && s2[i])
-	{
-		uni[g] = s2[i];
-		i++;
-		g++;
-	}
-	uni[g] = '\0';
-	return (uni);
-}
-
-char		*ft_strjoin(char const *s1, char const *s2)
-{
-	char	*uni;
-	int		sum;
-	int		g;
-	int		i;
-
-	i = 0;
-	g = 0;
-	sum = 0;
-	if (!(s1) || !(s2))
-		return (NULL);
-	sum = ft_strlen(s1) + ft_strlen(s2);
-	if (!(uni = ((char *)malloc(sum + 1))))
-		return (NULL);
-	return ((char *)part_two(s1, s2, uni));
+	i = ft_strchr(ostatok, '\n');
+	buffer = ft_substr(ostatok, 0, ft_strlen(ostatok));
+	buffer[i] = '\0';
+	return (buffer);
 }
 
 int		get_next_line(int fd, char **str)
 {
-	char	buffer[BUFFER_SIZE + 1];
+	char	*buffer;
 	int		x;
 	int		new_line;
 	int		i;
+	int ost = 0;
 	static char *ostatok;
 	static int y;
+	//char *pyst = NULL;
 
-	y = 0;
 	i = 0;
-	x = 0;
+	x = 1;
 	new_line = 0;
+	printf("ostatok NACHALO = %s\n", ostatok);
 	*str = ft_strdup("");
-	
+	printf("strdup_str = %s\n", *str);
 	if (y == 0)
 	{
+		*str = ft_strdup("");
 		ostatok = ft_strdup("");
 		y++;
 	}
-	
-	/*
-	if (ostatok[0] == '\0')
-	{
-		// если  в остатке что-то есть, то копируем в буфер, 
-		printf("ostatokNULL = %s\n", ostatok);
+
+	if (ostatok[0] != '\0')
+	{	
+		buffer = copy_ostatok(ostatok);
+		printf("ostatoc_if = %s\n", buffer);
+		*str = ft_strjoin(*str, buffer);
+		printf("ostatoc_if_str = %s\n", *str);
+		free(buffer);
 	}
-	*/
+
+	if (!(buffer = (malloc(sizeof(char) * (BUFFER_SIZE + 1)))))
+		return (-1);
+	/*
 	x = read(fd, buffer, BUFFER_SIZE);
 	buffer[x] = '\0';
 	printf("buffer = %s\n", buffer);
-	ostatok = ft_strchr(buffer, '\n');
-	
-	while (ostatok == NULL)
+	ost = ft_strchr(buffer, '\n');
+	ostatok = ft_substr(buffer, ost, (ft_strlen(buffer) - ost));
+	printf("OSTATOK = %s\n", ostatok);
+	*str = ft_strjoin(*str, buffer);
+	printf("STR_pered while = %s\n", *str);
+	*/
+
+	while (ost == 0 && x > 0)
 	{
-		*str = ft_strjoin(*str, buffer);
 		x = read(fd, buffer, BUFFER_SIZE);
 		buffer[x] = '\0';
-		printf("buffer = %s\n", buffer);
-		ostatok = ft_strchr(buffer, '\n');
+		printf("buffer_while = %s\n", buffer);
+		ost = ft_strchr(buffer, '\n');
+		if (ost > 0)
+			ostatok = ft_substr(buffer, ost, (ft_strlen(buffer) - ost));
+		else
+			ostatok = ft_substr(buffer, ost, 0);
+		*str = ft_strjoin(*str, buffer);
 	}
 	printf("ostatok = %s\n", ostatok);
-	*str = ft_strjoin(*str, buffer);
+	//*str = ft_strjoin(*str, buffer);
 	
-	/*
-	printf("buffer = %s\n", buffer);
+	free(buffer);
 	
-	buffer[x] = '\0';	
-	printf("b[x] = %c\n", buffer[x]);
-	
-	ostatok = ft_strchr(buffer, '\n');
-	printf("ostatok = %s\n", ostatok);
-	*str = ft_strjoin(*str, buffer);
-	*/
-	return (0);
+	return (1);
 }
-
-/*
-int			get_next_line(int fd, char **line)
-{
-	
-	char	*buffer[10 + 1];
-	int		x;
-	int		new_line;
-	int		i;
-
-	i = 0;
-	x = 0;
-	new_line = 0;
-	printf("999");
-
-	x = read(fd, buffer, 10);
-	printf("x = %d", x);
-	*buffer[10] = '\0';
-	while (*buffer[new_line] != '\n' && *buffer[new_line] != '\0')
-	{
-		(*line)[i] = *buffer[new_line];
-		i++;
-		new_line++;
-	}
-	return (0);
-}
-*/

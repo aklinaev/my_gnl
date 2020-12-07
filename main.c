@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aklinaev <aklinaev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: apenrose <apenrose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 23:47:54 by apenrose          #+#    #+#             */
-/*   Updated: 2020/12/07 16:38:21 by aklinaev         ###   ########.fr       */
+/*   Updated: 2020/12/07 22:38:12 by apenrose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ int main(void)
   n = 1;
   int fd;
   char *str;
-  int i;
+  int i = 0;
 
   fd = open("our_text.text", O_RDONLY);
   
-  while (i < 2)
+  while (i < 4)
      {
              n = get_next_line(fd, &str);
              i++;

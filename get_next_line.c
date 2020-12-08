@@ -6,7 +6,7 @@
 /*   By: aklinaev <aklinaev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 19:36:57 by apenrose          #+#    #+#             */
-/*   Updated: 2020/12/08 02:11:33 by aklinaev         ###   ########.fr       */
+/*   Updated: 2020/12/08 14:51:15 by aklinaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,29 +52,43 @@ int		get_next_line(int fd, char **str)
 	if (ostatok[0] != '\0')
 	{	
 		buffer = copy_ostatok(ostatok);
+		//printf("buffer = %s\n", buffer);
+		ost = ft_strchr(ostatok, '\n');
+		if (ost > 0)
+			ostatok = ft_substr(ostatok, ost, (ft_strlen(ostatok) - ost));
+		else
+			ostatok = ft_substr(buffer, ost, 0);
 		*str = ft_strjoin(*str, buffer);
 		free(buffer);
+		//printf("ostatok if ostatok = %s\n", ostatok);
+		if (ostatok[0] != '\0')
+			return (1);
 	}
 	if (!(buffer = (malloc(sizeof(char) * (BUFFER_SIZE + 1)))))
 		return (-1);
 	while (ost == 0 && x > 0)
 	{
 		x = read(fd, buffer, BUFFER_SIZE);
-		printf("x = %d", x);
 		if (x == 0)
 			return (-1);
 		buffer[x] = '\0';
+		//printf("x = %d\n", x);
 		ost = ft_strchr(buffer, '\n');
+		//printf("ost = %d\n", ost);
+		//printf("buffer_end = %s\n", buffer);
 		if (ost > 0)
 			ostatok = ft_substr(buffer, ost, (ft_strlen(buffer) - ost));
 		else
 			ostatok = ft_substr(buffer, ost, 0);
+		//printf("ostatok! = %s\n", ostatok);
 		*str = ft_strjoin(*str, buffer);
-		if (x < BUFFER_SIZE)
+		
+		if (x < BUFFER_SIZE && buffer == ostatok)
 		{
 			my_free(ostatok, buffer);
 			return (-1);
 		}
+		
 	}
 	free(buffer);
 	return (1);

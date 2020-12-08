@@ -6,7 +6,7 @@
 /*   By: aklinaev <aklinaev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 23:47:54 by apenrose          #+#    #+#             */
-/*   Updated: 2020/12/08 02:06:29 by aklinaev         ###   ########.fr       */
+/*   Updated: 2020/12/08 15:58:19 by aklinaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ int main(void)
   char *str;
   int i = 0;
 
-  fd = open("alphabet.txt", O_RDONLY);
+  fd = open("our_text.text", O_RDONLY);
   
-  while (i < 85)
+  while (i < 10)
      {
              n = get_next_line(fd, &str);
              i++;
              //printf("gnl = %d\n", n);
-             printf("%s\n", str);
+             printf(">>>>>>>>%s\n", str);
      } 
     return (0);
 }

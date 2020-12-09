@@ -6,7 +6,7 @@
 /*   By: apenrose <apenrose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 20:35:30 by apenrose          #+#    #+#             */
-/*   Updated: 2020/12/07 23:52:21 by apenrose         ###   ########.fr       */
+/*   Updated: 2020/12/09 22:09:02 by apenrose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ int		ft_strchr(const char *s, int c)
 {	
 	int i;
 	i = 0;
+	if (!s)
+		return (0);
 	while (s[i] && s[i] != (char)c)
 	{
 		//printf(" strchr = %s . ", s);
@@ -88,7 +90,10 @@ char		*ft_strdup(const char *s1)
 		count_s1++;
 	}
 	if (!(s2 = (char*)malloc(sizeof(char) * (count_s1 + 1))))
-		return (NULL);
+    {
+	    free (s2);
+        return (NULL);
+    }
 	while (i < count_s1)
 	{
 		s2[i] = s1[i];
@@ -118,7 +123,7 @@ size_t			ft_strlen(const char *s)
 	return (len);
 }
 
-char		*part_two(char const *s1, char const *s2, char *uni)
+char		*part_two(char *s1, char *s2, char *uni)
 {
 	int		g;
 	int		i;
@@ -139,10 +144,11 @@ char		*part_two(char const *s1, char const *s2, char *uni)
 		g++;
 	}
 	uni[g] = '\0';
+	free(s1);
 	return (uni);
 }
 
-char		*ft_strjoin(char const *s1, char const *s2)
+char		*ft_strjoin(char *s1, char *s2)
 {
 	char	*uni;
 	int		sum;

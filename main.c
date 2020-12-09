@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aklinaev <aklinaev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: apenrose <apenrose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 23:47:54 by apenrose          #+#    #+#             */
-/*   Updated: 2020/12/08 15:58:19 by aklinaev         ###   ########.fr       */
+/*   Updated: 2020/12/09 00:47:35 by apenrose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,16 @@ int main(void)
   char *str;
   int i = 0;
 
-  fd = open("our_text.text", O_RDONLY);
+  fd = open("/Users/apenrose/my_gnl/our_text.text", O_RDONLY);
   
   while (i < 10)
      {
              n = get_next_line(fd, &str);
              i++;
              //printf("gnl = %d\n", n);
-             printf(">>>>>>>>%s\n", str);
-     } 
+             printf(">>>>>>>>%s || n = %d\n", str, n);
+             free(str);
+     }
+//     sleep(100);
     return (0);
 }

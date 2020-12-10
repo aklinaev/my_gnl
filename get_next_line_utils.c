@@ -6,7 +6,7 @@
 /*   By: apenrose <apenrose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 20:35:30 by apenrose          #+#    #+#             */
-/*   Updated: 2020/12/09 22:09:02 by apenrose         ###   ########.fr       */
+/*   Updated: 2020/12/10 23:44:07 by apenrose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,11 +113,13 @@ size_t			ft_strlenn(const char *s)
 	return (len);
 }
 
-size_t			ft_strlen(const char *s)
+int			ft_strlen(const char *s)
 {
-	size_t	len;
+	int	len;
 
 	len = 0;
+	if (!s)
+	    return (0);
 	while (s[len])
 		len++;
 	return (len);

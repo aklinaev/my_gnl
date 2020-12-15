@@ -6,3 +6,6 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
+a.out
+.DS_Store
+42TESTERS-GNL/*

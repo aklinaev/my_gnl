@@ -6,7 +6,7 @@
 /*   By: apenrose <apenrose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 20:35:30 by apenrose          #+#    #+#             */
-/*   Updated: 2020/12/10 23:44:07 by apenrose         ###   ########.fr       */
+/*   Updated: 2020/12/12 18:00:50 by apenrose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 
 
-char		*ft_substr(char const *s, unsigned int start, size_t len)
+char		*ft_substr(char *s, unsigned int start, size_t len)
 {
 	char			*ss;
 	unsigned int	i;
@@ -36,6 +36,7 @@ char		*ft_substr(char const *s, unsigned int start, size_t len)
 		start++;
 	}
 	ss[i] = '\0';
+	free(s);
 	return (ss);
 }
 
@@ -90,10 +91,7 @@ char		*ft_strdup(const char *s1)
 		count_s1++;
 	}
 	if (!(s2 = (char*)malloc(sizeof(char) * (count_s1 + 1))))
-    {
-	    free (s2);
         return (NULL);
-    }
 	while (i < count_s1)
 	{
 		s2[i] = s1[i];
@@ -103,9 +101,9 @@ char		*ft_strdup(const char *s1)
 	return (s2);
 }
 
-size_t			ft_strlenn(const char *s)
+int			ft_strlenn(const char *s)
 {
-	size_t	len;
+	int	len;
 
 	len = 0;
 	while (s[len] != '\n')
@@ -132,38 +130,37 @@ char		*part_two(char *s1, char *s2, char *uni)
 
 	i = 0;
 	g = 0;
-	while (s1[i])
+	while (s1 && s1[i])
 	{
 		uni[g] = s1[i];
 		i++;
 		g++;
 	}
 	i = 0;
-	while (s2[i] != '\n' && s2[i])
+	while (s2 && (s2[i] != '\n') && s2[i])
 	{
 		uni[g] = s2[i];
 		i++;
 		g++;
 	}
 	uni[g] = '\0';
-	free(s1);
+    if (s1 && *s1)
+        free(s1);
 	return (uni);
 }
 
 char		*ft_strjoin(char *s1, char *s2)
 {
 	char	*uni;
-	int		sum;
-	int		g;
-	int		i;
+	int		len_s1;
+	int		len_s2;
 
-	i = 0;
-	g = 0;
-	sum = 0;
-	if (!(s1) || !(s2))
-		return (NULL);
-	sum = ft_strlen(s1) + ft_strlen(s2);
-	if (!(uni = ((char *)malloc(sum + 1))))
+//	if (!(s2))
+//		return (NULL);
+	len_s1 = !s1 ? 0 : ft_strlen(s1);
+	len_s2 = !s2 ? 0 : ft_strlen(s2);
+	if (!(uni = ((char *)malloc(len_s1 + len_s2 + 1))))
 		return (NULL);
 	return ((char *)part_two(s1, s2, uni));
 }
+

@@ -1,3 +1,3 @@
-/Users/apenrose/my_gnl/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/apenrose/my_gnl/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/apenrose/my_gnl/cmake-build-debug/CMakeFiles/my_gnl.dir
+/Users/apenrose/get_next_line/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/apenrose/get_next_line/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/apenrose/get_next_line/cmake-build-debug/CMakeFiles/get_next_line.dir

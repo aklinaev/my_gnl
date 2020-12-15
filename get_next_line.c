@@ -6,55 +6,55 @@
 /*   By: apenrose <apenrose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 19:36:57 by apenrose          #+#    #+#             */
-/*   Updated: 2020/12/10 23:54:11 by apenrose         ###   ########.fr       */
+/*   Updated: 2020/12/12 22:12:50 by apenrose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include <stdio.h>
 
-void	my_free(char *ostatok, char *buffer)
+char 	*my_free(char *ostatok)
 {
-	free(buffer);
 	free(ostatok);
+    return (NULL);
 }
 
-char	*copy_ostatok(char *ostatok)
-{
-	int		i;
-	char	*buffer;
+//char	*copy_ostatok(char *ostatok)
+//{
+//	int		i;
+//	char	*buffer;
+//
+//	i = ft_strchr(ostatok, '\n');
+//	buffer = ft_substr(ostatok, 0, ft_strlen(ostatok));
+//	if (i != 0)
+//		buffer[i] = '\0';
+//	else
+//		buffer[ft_strlen(ostatok)] = '\0';
+//	return (buffer);
+//}
 
-	i = ft_strchr(ostatok, '\n');
-	buffer = ft_substr(ostatok, 0, ft_strlen(ostatok));
-	if (i != 0)
-		buffer[i] = '\0';
-	else
-		buffer[ft_strlen(ostatok)] = '\0';
-	return (buffer);
-}
+//char	*copy_to_buf_str(char *ostatok, char *buffer, char **str)
+//{
+//	buffer = copy_ostatok(ostatok);
+//	*str = ft_strjoin(*str, buffer);
+//	free (buffer);
+//	return (ostatok);
+//}
 
-char	*copy_to_buf_str(char *ostatok, char *buffer, char **str)
-{
-	buffer = copy_ostatok(ostatok);
-	*str = ft_strjoin(*str, buffer);
-	free (buffer);
-	return (ostatok);
-}
-
-char	*read_to_ost(char *ostatok, char *buffer, char **str, int fd)
-{
-	int		x = 1;
-	if (!(ostatok = (malloc(sizeof(char) * (BUFFER_SIZE + 1)))))
-		return (NULL);
-	while (x > 0)
-	{
-		x = read(fd, ostatok, BUFFER_SIZE);
-		ostatok[x] = '\0';
-		ostatok = copy_to_buf_str(ostatok, buffer, str);
-	}
-	free (buffer);
-	return (ostatok);
-}
+//char	*read_to_ost(char *ostatok, char *buffer, char **str, int fd)
+//{
+//	int		x = 1;
+//	if (!(ostatok = (malloc(sizeof(char) * (BUFFER_SIZE + 1)))))
+//		return (NULL);
+//	while (x > 0)
+//	{
+//		x = read(fd, ostatok, BUFFER_SIZE);
+//		ostatok[x] = '\0';
+//		ostatok = copy_to_buf_str(ostatok, buffer, str);
+//	}
+//	free (buffer);
+//	return (ostatok);
+//}
 
 int		n_chr(const char *s, int c)
 {	
@@ -72,35 +72,55 @@ int		n_chr(const char *s, int c)
 	return (0);
 }
 
-char		*part_twoo(char *s1, char *s2, char *uni)
-{
-	int		g;
-	int		i;
-
-	i = 0;
-	g = 0;
-	//s1 = ft_strdup("");
-	while (s1[i])
-	{
-		uni[g] = s1[i];
-		i++;
-		g++;
-	}
-	i = 0;
-	while (s2[i] != '\0' && s2[i])
-	{
-		uni[g] = s2[i];
-		i++;
-		g++;
-	}
-	uni[g] = '\0';
-	free(s1);
-	return (uni);
-}
+//char		*part_twoo(char *s1, char *s2, char *uni)
+//{
+//	int		g;
+//	int		i;
+//
+//	i = 0;
+//	g = 0;
+//	//s1 = ft_strdup("");
+//	while (s1[i])
+//	{
+//		uni[g] = s1[i];
+//		i++;
+//		g++;
+//	}
+//	i = 0;
+//	while (s2[i] != '\0' && s2[i])
+//	{
+//		uni[g] = s2[i];
+//		i++;
+//		g++;
+//	}
+//	uni[g] = '\0';
+//	free(s1);
+//	return (uni);
+//}
+//
+//char		*strjoin_ft(char *s1, char *s2)
+//{
+//    char	*uni;
+//    int		sum;
+//    int		g;
+//    int		i;
+//
+//    i = 0;
+//    g = 0;
+//    sum = 0;
+//    if (!(s2))
+//        return (NULL);
+//    sum = ft_strlen(s1) + ft_strlen(s2);
+//    // printf("sum = %d\n", sum);
+//    if (!(uni = ((char *)malloc(sum + 1))))
+//        return (NULL);
+//    return ((char *)part_twoo(s1, s2, uni));
+//}
 
 char		*strjoin_ft(char *s1, char *s2)
 {
 	char	*uni;
+	//char    *tmp;
 	int		sum;
 	int		g;
 	int		i;
@@ -111,11 +131,26 @@ char		*strjoin_ft(char *s1, char *s2)
 	if (!(s2))
 		return (NULL);
 	sum = ft_strlen(s1) + ft_strlen(s2);
-	// printf("sum = %d\n", sum);
 	if (!(uni = ((char *)malloc(sum + 1))))
 		return (NULL);
-	return ((char *)part_twoo(s1, s2, uni));
+    while (s1 && s1[i])
+    {
+        uni[g] = s1[i];
+        i++;
+        g++;
+    }
+    i = 0;
+    while (s2[i] != '\0' && s2[i])
+    {
+        uni[g] = s2[i];
+        i++;
+        g++;
+    }
+    uni[g] = '\0';
+    //free(s1);
+    return (uni);
 }
+
 
 int		get_next_line(int fd, char **str)
 {
@@ -123,31 +158,35 @@ int		get_next_line(int fd, char **str)
 	char		*buffer;
 	int			i_rd;
 	int			i_n;
-	static int  y = 1;
+	//static int  y = 1;
+	char        *tmp;
 
 	if (fd < 0 || !str || BUFFER_SIZE <= 0)
         return (-1);
 	if (!(buffer = (malloc(sizeof(char) * (BUFFER_SIZE + 1)))))
 		return (-1);
-	*str = ft_strdup("");
-	if (y++ < 2)
-        ostatok = ft_strdup("");
-	while (!(i_n = n_chr(ostatok, '\n')) && (((i_rd = read(fd, buffer, BUFFER_SIZE)) > 0)))
+	*str = NULL;
+	//if (y++ < 2)
+    //	ostatok = ft_strdup("");
+	while (!(i_n = n_chr(ostatok, '\n')) && (((i_rd = read(fd, buffer, BUFFER_SIZE)))))
 	{
 		if (i_rd < 0)
 		{
 			free (buffer);
 			free (ostatok);
+			ostatok = NULL;
 			return (-1);
 		}
 		buffer[i_rd] = '\0';
+		tmp = ostatok;
 		ostatok = strjoin_ft(ostatok, buffer);
+		free(tmp);
 	}
 	free (buffer);
 	i_n = n_chr(ostatok, '\n');
 	*str = ft_strjoin(*str, ostatok);
 	if ((i_rd == 0) && (i_n == 0))
-	    ostatok = ft_substr(ostatok, i_n, 0);
+	    ostatok = my_free(ostatok);
 	else
         ostatok = ft_substr(ostatok, i_n, (ft_strlen(ostatok) - i_n));
 	return (((i_rd == 0) && (i_n == 0)) ? 0 : 1);
@@ -157,11 +196,11 @@ int		get_next_line(int fd, char **str)
 // {
 // 	static char *ostatok;
 // 	char		*buffer = NULL;
-// 	//int			i;
+// 	static int  y = 1;
 // 	int			i_n;
-
-// 	*str = ft_strdup("");
-//     ostatok = read_to_ost(ostatok, buffer, str, fd);
+// 	if (y++ < 2)
+// 	    *str = ft_strdup("");
+// 	ostatok = read_to_ost(ostatok, buffer, str, fd);
 // 	if (ostatok)
 // 		copy_to_buf_str(ostatok, buffer, str);
 // 	free (buffer);

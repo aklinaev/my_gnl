@@ -312,7 +312,7 @@ char		*ft_strjoin(char const *s1, char const *s2)
 	sum = 0;
 	if (!(s1) || !(s2))
 		return (NULL);
-	sum = ft_strlen(s1) + ft_strlen(s2);
+	sum = ft_strlen(s1) + ft_strlenn(s2);
 	if (!(uni = ((char *)malloc(sum + 1))))
 		return (NULL);
 	return ((char *)part_two(s1, s2, uni));

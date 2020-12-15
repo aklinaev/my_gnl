@@ -63,10 +63,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/apenrose/my_gnl
+CMAKE_SOURCE_DIR = /Users/apenrose/get_next_line
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/apenrose/my_gnl/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/apenrose/get_next_line/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/my_gnl.dir/depend.make
@@ -79,42 +79,42 @@ include CMakeFiles/my_gnl.dir/flags.make
 
 CMakeFiles/my_gnl.dir/get_next_line.c.o: CMakeFiles/my_gnl.dir/flags.make
 CMakeFiles/my_gnl.dir/get_next_line.c.o: ../get_next_line.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/apenrose/my_gnl/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/my_gnl.dir/get_next_line.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/my_gnl.dir/get_next_line.c.o   -c /Users/apenrose/my_gnl/get_next_line.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/apenrose/get_next_line/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/my_gnl.dir/get_next_line.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/my_gnl.dir/get_next_line.c.o   -c /Users/apenrose/get_next_line/get_next_line.c
 
 CMakeFiles/my_gnl.dir/get_next_line.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/my_gnl.dir/get_next_line.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/apenrose/my_gnl/get_next_line.c > CMakeFiles/my_gnl.dir/get_next_line.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/apenrose/get_next_line/get_next_line.c > CMakeFiles/my_gnl.dir/get_next_line.c.i
 
 CMakeFiles/my_gnl.dir/get_next_line.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/my_gnl.dir/get_next_line.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/apenrose/my_gnl/get_next_line.c -o CMakeFiles/my_gnl.dir/get_next_line.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/apenrose/get_next_line/get_next_line.c -o CMakeFiles/my_gnl.dir/get_next_line.c.s
 
 CMakeFiles/my_gnl.dir/get_next_line_utils.c.o: CMakeFiles/my_gnl.dir/flags.make
 CMakeFiles/my_gnl.dir/get_next_line_utils.c.o: ../get_next_line_utils.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/apenrose/my_gnl/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/my_gnl.dir/get_next_line_utils.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/my_gnl.dir/get_next_line_utils.c.o   -c /Users/apenrose/my_gnl/get_next_line_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/apenrose/get_next_line/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/my_gnl.dir/get_next_line_utils.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/my_gnl.dir/get_next_line_utils.c.o   -c /Users/apenrose/get_next_line/get_next_line_utils.c
 
 CMakeFiles/my_gnl.dir/get_next_line_utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/my_gnl.dir/get_next_line_utils.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/apenrose/my_gnl/get_next_line_utils.c > CMakeFiles/my_gnl.dir/get_next_line_utils.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/apenrose/get_next_line/get_next_line_utils.c > CMakeFiles/my_gnl.dir/get_next_line_utils.c.i
 
 CMakeFiles/my_gnl.dir/get_next_line_utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/my_gnl.dir/get_next_line_utils.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/apenrose/my_gnl/get_next_line_utils.c -o CMakeFiles/my_gnl.dir/get_next_line_utils.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/apenrose/get_next_line/get_next_line_utils.c -o CMakeFiles/my_gnl.dir/get_next_line_utils.c.s
 
 CMakeFiles/my_gnl.dir/main.c.o: CMakeFiles/my_gnl.dir/flags.make
 CMakeFiles/my_gnl.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/apenrose/my_gnl/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/my_gnl.dir/main.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/my_gnl.dir/main.c.o   -c /Users/apenrose/my_gnl/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/apenrose/get_next_line/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/my_gnl.dir/main.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/my_gnl.dir/main.c.o   -c /Users/apenrose/get_next_line/main.c
 
 CMakeFiles/my_gnl.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/my_gnl.dir/main.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/apenrose/my_gnl/main.c > CMakeFiles/my_gnl.dir/main.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/apenrose/get_next_line/main.c > CMakeFiles/my_gnl.dir/main.c.i
 
 CMakeFiles/my_gnl.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/my_gnl.dir/main.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/apenrose/my_gnl/main.c -o CMakeFiles/my_gnl.dir/main.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/apenrose/get_next_line/main.c -o CMakeFiles/my_gnl.dir/main.c.s
 
 # Object files for target my_gnl
 my_gnl_OBJECTS = \
@@ -130,7 +130,7 @@ my_gnl: CMakeFiles/my_gnl.dir/get_next_line_utils.c.o
 my_gnl: CMakeFiles/my_gnl.dir/main.c.o
 my_gnl: CMakeFiles/my_gnl.dir/build.make
 my_gnl: CMakeFiles/my_gnl.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/apenrose/my_gnl/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable my_gnl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/apenrose/get_next_line/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable my_gnl"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/my_gnl.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -143,6 +143,6 @@ CMakeFiles/my_gnl.dir/clean:
 .PHONY : CMakeFiles/my_gnl.dir/clean
 
 CMakeFiles/my_gnl.dir/depend:
-	cd /Users/apenrose/my_gnl/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/apenrose/my_gnl /Users/apenrose/my_gnl /Users/apenrose/my_gnl/cmake-build-debug /Users/apenrose/my_gnl/cmake-build-debug /Users/apenrose/my_gnl/cmake-build-debug/CMakeFiles/my_gnl.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/apenrose/get_next_line/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/apenrose/get_next_line /Users/apenrose/get_next_line /Users/apenrose/get_next_line/cmake-build-debug /Users/apenrose/get_next_line/cmake-build-debug /Users/apenrose/get_next_line/cmake-build-debug/CMakeFiles/my_gnl.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/my_gnl.dir/depend
 

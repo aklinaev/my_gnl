@@ -68,10 +68,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/apenrose/my_gnl
+CMAKE_SOURCE_DIR = /Users/apenrose/get_next_line
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/apenrose/my_gnl/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/apenrose/get_next_line/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/apenrose/my_gnl/cmake-build-debug/CMakeFiles /Users/apenrose/my_gnl/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/apenrose/get_next_line/cmake-build-debug/CMakeFiles /Users/apenrose/get_next_line/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/apenrose/my_gnl/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/apenrose/get_next_line/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -131,17 +131,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named my_gnl
+# Target rules for targets named get_next_line
 
 # Build rule for target.
-my_gnl: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 my_gnl
-.PHONY : my_gnl
+get_next_line: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 get_next_line
+.PHONY : get_next_line
 
 # fast build rule for target.
-my_gnl/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_gnl.dir/build.make CMakeFiles/my_gnl.dir/build
-.PHONY : my_gnl/fast
+get_next_line/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/get_next_line.dir/build.make CMakeFiles/get_next_line.dir/build
+.PHONY : get_next_line/fast
 
 get_next_line.o: get_next_line.c.o
 
@@ -149,7 +149,7 @@ get_next_line.o: get_next_line.c.o
 
 # target to build an object file
 get_next_line.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_gnl.dir/build.make CMakeFiles/my_gnl.dir/get_next_line.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/get_next_line.dir/build.make CMakeFiles/get_next_line.dir/get_next_line.c.o
 .PHONY : get_next_line.c.o
 
 get_next_line.i: get_next_line.c.i
@@ -158,7 +158,7 @@ get_next_line.i: get_next_line.c.i
 
 # target to preprocess a source file
 get_next_line.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_gnl.dir/build.make CMakeFiles/my_gnl.dir/get_next_line.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/get_next_line.dir/build.make CMakeFiles/get_next_line.dir/get_next_line.c.i
 .PHONY : get_next_line.c.i
 
 get_next_line.s: get_next_line.c.s
@@ -167,7 +167,7 @@ get_next_line.s: get_next_line.c.s
 
 # target to generate assembly for a file
 get_next_line.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_gnl.dir/build.make CMakeFiles/my_gnl.dir/get_next_line.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/get_next_line.dir/build.make CMakeFiles/get_next_line.dir/get_next_line.c.s
 .PHONY : get_next_line.c.s
 
 get_next_line_utils.o: get_next_line_utils.c.o
@@ -176,7 +176,7 @@ get_next_line_utils.o: get_next_line_utils.c.o
 
 # target to build an object file
 get_next_line_utils.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_gnl.dir/build.make CMakeFiles/my_gnl.dir/get_next_line_utils.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/get_next_line.dir/build.make CMakeFiles/get_next_line.dir/get_next_line_utils.c.o
 .PHONY : get_next_line_utils.c.o
 
 get_next_line_utils.i: get_next_line_utils.c.i
@@ -185,7 +185,7 @@ get_next_line_utils.i: get_next_line_utils.c.i
 
 # target to preprocess a source file
 get_next_line_utils.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_gnl.dir/build.make CMakeFiles/my_gnl.dir/get_next_line_utils.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/get_next_line.dir/build.make CMakeFiles/get_next_line.dir/get_next_line_utils.c.i
 .PHONY : get_next_line_utils.c.i
 
 get_next_line_utils.s: get_next_line_utils.c.s
@@ -194,7 +194,7 @@ get_next_line_utils.s: get_next_line_utils.c.s
 
 # target to generate assembly for a file
 get_next_line_utils.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_gnl.dir/build.make CMakeFiles/my_gnl.dir/get_next_line_utils.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/get_next_line.dir/build.make CMakeFiles/get_next_line.dir/get_next_line_utils.c.s
 .PHONY : get_next_line_utils.c.s
 
 main.o: main.c.o
@@ -203,7 +203,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_gnl.dir/build.make CMakeFiles/my_gnl.dir/main.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/get_next_line.dir/build.make CMakeFiles/get_next_line.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -212,7 +212,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_gnl.dir/build.make CMakeFiles/my_gnl.dir/main.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/get_next_line.dir/build.make CMakeFiles/get_next_line.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -221,7 +221,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_gnl.dir/build.make CMakeFiles/my_gnl.dir/main.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/get_next_line.dir/build.make CMakeFiles/get_next_line.dir/main.c.s
 .PHONY : main.c.s
 
 # Help Target
@@ -232,7 +232,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... my_gnl"
+	@echo "... get_next_line"
 	@echo "... get_next_line.o"
 	@echo "... get_next_line.i"
 	@echo "... get_next_line.s"
